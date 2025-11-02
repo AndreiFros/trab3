@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minha Loja - Flexbox</title>
+    <!-- META BÁSICA PARA O GOOGLE -->
+<meta name="description" content="AFDMotors - Servico de qualidade e preço justo.">
+<meta name="keywords" content="loja, serviços automotivos, tecnologia, ofertas, qualidade">
+<meta name="author" content="Andrei Frós Duarte">
+
+<!-- SEO E RESPONSIVIDADE -->
+<meta name="robots" content="index, follow">
+<meta name="theme-color" content="#007bff">
+
+<!-- OPEN GRAPH (FACEBOOK, WHATSAPP, LINKEDIN) -->
+<meta property="og:title" content="AFDMotors - Os melhores serviços para o seu carro!">
+<meta property="og:description" content="A melhor experiência de compras online com qualidade, rapidez e preço justo.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://github.com/AndreiFros.github.io/AFDMotors/">
+<meta property="og:image" content="https://https://github.com/AndreiFros.github.io/AFDMotors/images/cartao.webp">
+
+<!-- TWITTER CARD -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="AFDMotors - Os melhores serviços para o seu carro!">
+<meta name="twitter:description" content="Faça a manutenção do seu carro com qualidade e segurança.">
+<meta name="twitter:image" content="https://github.com/AndreiFros/AFDMotors/images/cartao.webp">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/estilo.css">
+</head>
+<body>
+    <a class="skip-link" href="#main">Pular para o conteúdo</a>
+
+    <header id="topo" role="banner">
+        <div class="header-inner">
+            <h1>AFD Motors</h1>
+            <p>Os melhores produtos para você!</p>
+
+            <nav aria-label="Menu principal" role="navigation" class="navbar">
+                <ul>
+                    <li><a href="#home">Início</a></li>
+                    <li><a href="#produtos">Produtos</a></li>
+                    <li><a href="#formulario">Cadastro</a></li>
+                    <li><a href="#painel-fotos">Galeria</a></li>
+                    <li><a href="#sobre">Sobre</a></li>
+                    <li><a href="#contato">Contato</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main id="main">
+        <section id="home" class="sessao">
+            <h2>Bem-vindo à AFD Motors</h2>
+            <img src="images/produto6.png" alt="Imagem principal" class="img-principal" width="800" height="500" loading="lazy">
+
+            <p>Encontre produtos de qualidade, com os melhores preços e entrega rápida.</p>
+            <p>Confira nossas ofertas e promoções especiais!</p>
+
+            <div class="imgs-showcase">
+                <img src="images/produto2.png" alt="Imagem 2" class="img-extra" width="400" height="300" loading="lazy">
+                <img src="images/produto3.png" alt="Imagem 3" class="img-extra" width="400" height="300" loading="lazy">
+            </div>
+
+            <p><a href="#topo">Voltar para o topo</a></p>
+        </section>
+
+        
+        <section id="produtos" class="sessao">
+            <h2>Nossos Produtos</h2>
+
+            <div class="galeria">
+                <div class="card">
+                    <img src="images/produto1.png" alt="Produto 1" width="400" height="300" loading="lazy">
+                    <p>Produto 1 - R$ 100,00</p>
+                </div>
+                <div class="card">
+                    <img src="images/produto2.png" alt="Produto 2" width="400" height="300" loading="lazy">
+                    <p>Produto 2 - R$ 120,00</p>
+                </div>
+                <div class="card">
+                    <img src="images/produto3.png" alt="Produto 3" width="400" height="300" loading="lazy">
+                    <p>Produto 3 - R$ 90,00</p>
+                </div>
+                <div class="card">
+                    <img src="images/produto4.png" alt="Produto 4" width="400" height="300" loading="lazy">
+                    <p>Produto 4 - R$ 150,00</p>
+                </div>
+                <div class="card">
+                    <img src="images/produto5.png" alt="Produto 5" width="400" height="300" loading="lazy">
+                    <p>Produto 5 - R$ 80,00</p>
+    
+                </div>
+            </div>
+            <p><a href="#topo">Voltar para o topo</a></p>
+        </section>
+        <section id="formulario" class="sessao">
+  <h2>Cadastre-se</h2>
+  <div class="grid-formulario">
+    <picture>
+      <source srcset="images/form-grande.webp" media="(min-width: 1200px)">
+      <source srcset="images/form-medio.webp" media="(min-width: 768px)">
+      <img src="images/form-pequeno.webp" alt="Imagem de cadastro" width="600" height="400" loading="lazy">
+    </picture>
+
+    <form>
+      <fieldset>
+        <legend>Dados Pessoais</legend>
+
+        <label for="nome">Nome:</label>
+        <input type="text" id="nome" name="nome" required>
+
+        <label for="email">E-mail:</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="data">Data de Nascimento:</label>
+        <input type="date" id="data" name="data">
+
+        <label for="genero">Gênero:</label>
+        <select id="genero" name="genero">
+          <option value="">Selecione</option>
+          <option>Masculino</option>
+          <option>Feminino</option>
+          <option>Outro</option>
+        </select>
+
+        <label for="mensagem">Mensagem:</label>
+        <textarea id="mensagem" name="mensagem" rows="3"></textarea>
+
+        <button type="submit">Enviar</button>
+      </fieldset>
+    </form>
+  </div>
+  <p><a href="#topo">Voltar para o topo</a></p>
+</section>
+
+<section id="painel-fotos" class="sessao">
+  <h2>Painel de Fotos</h2>
+  <div class="grid-painel">
+    <div class="foto f1" role="img" aria-label="Foto 1"
+         data-bg-sm="images/painel1.webp"
+         data-bg-lg="images/painel1.webp"></div>
+    <div class="foto f2" role="img" aria-label="Foto 2"
+         data-bg-sm="images/painel2.webp"
+         data-bg-lg="images/painel2.webp"></div>
+    <div class="foto f3" role="img" aria-label="Foto 3"
+         data-bg-sm="images/painel3.webp"
+         data-bg-lg="images/painel3.webp"></div>
+    <div class="foto f4" role="img" aria-label="Foto 4"
+         data-bg-sm="images/painel4.webp"
+         data-bg-lg="images/painel4.webp"></div>
+    <div class="foto f5" role="img" aria-label="Foto 5"
+         data-bg-sm="images/painel5.webp"
+         data-bg-lg="images/painel5.webp"></div>
+  </div>
+  <p><a href="#topo">Voltar para o topo</a></p>
+</section>
+       
+        <section id="sobre" class="sessao">
+            <h2>Sobre</h2>
+            <p>Somos uma loja dedicada e se preocupa com o seu carros e procuramos oferecer um atendimento de qualidade.</p>
+            <p><a href="#topo">Voltar para o topo</a></p>
+        </section>
+
+        <section id="contato" class="sessao">
+            <h2>Contato</h2>
+            <p>Email: contato@AFDMotors.com</p>
+            <p>Telefone: (00) 0000-0000</p>
+            <p><a href="#topo">Voltar para o topo</a></p>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 AFDMotors. Todos os direitos reservados.</p>
+    </footer>
+
+    <!-- lazy-load script para backgrounds do painel -->
+<script>
+  (function(){
+    const isLarge = () => window.innerWidth >= 1200;
+    const setBg = (el) => {
+      const src = (isLarge() ? el.dataset.bgLg : el.dataset.bgSm) || el.dataset.bgSm;
+      if (src) el.style.backgroundImage = `url('${src}')`;
+    };
+    const els = document.querySelectorAll('.grid-painel .foto');
+    if ('IntersectionObserver' in window) {
+      const io = new IntersectionObserver((entries, obs) => {
+        entries.forEach(e => {
+          if (e.isIntersecting) {
+            setBg(e.target);
+            obs.unobserve(e.target);
+          }
+        });
+      }, {rootMargin: '200px'});
+      els.forEach(el => io.observe(el));
+      // trocar imagens ao redimensionar para desktop/mobile
+      let resizeTimer;
+      window.addEventListener('resize', () => {
+        clearTimeout(resizeTimer);
+        resizeTimer = setTimeout(() => {
+          els.forEach(el => {
+            // se já foi carregado, re-load apenas se a versão ideal mudou
+            const bg = el.style.backgroundImage;
+            const expected = `url("${isLarge() ? el.dataset.bgLg : el.dataset.bgSm}")`;
+            if (bg && bg !== expected) setBg(el);
+          });
+        }, 250);
+      });
+    } else {
+      // fallback: carregar todas
+      els.forEach(setBg);
+    }
+  })();
+</script>
+</body>
+</html>

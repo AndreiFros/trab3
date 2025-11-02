@@ -1,0 +1,158 @@
+/* Reset simples */
+*{box-sizing:border-box}
+body{
+  font-family: Roboto, system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
+  margin:0;
+  color:#222;
+  line-height:1.4;
+  padding:0 1rem;
+  background:#fff;
+}
+
+/* Cabeçalho e navegação simples */
+.header-inner{max-width:1200px;margin:0 auto;padding:1rem 0}
+header h1{margin:0;font-size:1.5rem}
+.navbar ul{list-style:none;padding:0;margin:.5rem 0;display:flex;gap:1rem;flex-wrap:wrap}
+.navbar a{color:inherit;text-decoration:none}
+
+/* Hero/imagem principal (ocupa ~90% da largura) */
+.img-principal{
+  display:block;
+  width:90%;
+  max-width:1200px;
+  margin:0.75rem auto;
+  height:auto;
+  border-radius:6px;
+  object-fit:cover;
+}
+
+/* ====== FORMULÁRIO + IMAGEM (versão simples) ====== */
+.grid-formulario{
+  display:flex;
+  flex-direction:column; /* mobile: imagem acima, formulário abaixo */
+  gap:1rem;
+  max-width:1200px;
+  margin:1rem auto;
+  align-items:stretch;
+}
+
+/* garantir que a imagem do lado ocupe espaço e seja responsiva */
+.grid-formulario picture,
+.grid-formulario img{
+  width:100%;
+  display:block;
+  border-radius:6px;
+}
+
+/* form básico */
+.grid-formulario form{
+  width:100%;
+}
+.grid-formulario fieldset{
+  border:1px solid #e0e0e0;
+  padding:1rem;
+  border-radius:6px;
+  display:grid;
+  gap:.75rem;
+  grid-template-columns: 1fr; /* mobile: 1 coluna */
+}
+.grid-formulario label{font-size:.9rem}
+.grid-formulario input,
+.grid-formulario select,
+.grid-formulario textarea,
+.grid-formulario button{
+  padding:.5rem;
+  border:1px solid #ccc;
+  border-radius:4px;
+  font-size:1rem;
+}
+
+/* botão ocupa toda largura no mobile */
+.grid-formulario button{background:#0d6efd;color:#fff;border:none;cursor:pointer;width:100%}
+
+/* em telas maiores: imagem e form lado a lado */
+@media (min-width:900px){
+  .grid-formulario{flex-direction:row;gap:2rem}
+  /* imagem maior (aprox 60% do espaço) */
+  .grid-formulario picture,
+  .grid-formulario img{flex:1 1 60%}
+  .grid-formulario form{flex:1 1 40%}
+  /* mais espaço para campos: duas colunas dentro do fieldset */
+  .grid-formulario fieldset{grid-template-columns: 1fr 1fr}
+  /* forçar elementos a ocuparem 2 colunas se necessário */
+  .grid-formulario .full{grid-column:1 / -1}
+  .grid-formulario button{width:auto;padding:.6rem 1rem}
+}
+
+/* ====== PAINEL DE FOTOS (simples, sem JS) ====== */
+.grid-painel{
+  display:grid;
+  gap:.5rem;
+  max-width:1200px;
+  margin:1rem auto;
+  /* mobile: cabe várias colunas sem overflow */
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+}
+
+/* cada foto usa background cover; usamos padding-top para manter proporção em mobile */
+.grid-painel .foto{
+  background-repeat:no-repeat;
+  background-size:cover;
+  background-position:center;
+  border-radius:6px;
+  overflow:hidden;
+  padding-top:66%; /* ~3:2 proporção em mobile */
+}
+
+/* Em telas largas, painel ocupa altura e usa colunas fixas */
+@media (min-width:900px){
+  .grid-painel{
+    height:70vh; /* ocupa pelo menos 70% da tela */
+    grid-template-columns: repeat(5, 1fr);
+    grid-auto-rows: 1fr;
+    gap:.75rem;
+  }
+  .grid-painel .foto{
+    padding-top:0;
+    height:100%;
+  }
+  /* combinações simples para variar tamanho visual (opcional) */
+  .grid-painel .f1{grid-column:1 / 3}
+  .grid-painel .f3{grid-column:4 / 6}
+  .grid-painel .f5{grid-column:2 / 4}
+}
+
+/* galeria de produtos simples */
+.galeria{display:flex;flex-wrap:wrap;gap:1rem;justify-content:center;max-width:1200px;margin:1rem auto}
+.card{width:calc(50% - .5rem);max-width:300px;border:1px solid #eee;padding:.5rem;border-radius:6px;text-align:center}
+.card img{width:100%;height:auto;border-radius:4px}
+
+/* rodapé */
+footer{text-align:center;padding:1rem 0;color:#666;font-size:.9rem;margin-top:2rem}
+
+/* suaviza rolagem ao clicar nos links internos */
+html {
+    scroll-behavior: smooth;
+}
+
+/* link de pular conteúdo (acessibilidade) */
+.skip-link {
+    position: absolute;
+    left: -9999px;
+    top: auto;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+}
+.skip-link:focus {
+    position: fixed;
+    left: 1rem;
+    top: 1rem;
+    width: auto;
+    height: auto;
+    background: #fff;
+    padding: 8px 12px;
+    border: 2px solid #007BFF;
+    z-index: 9999;
+    border-radius: 4px;
+}
