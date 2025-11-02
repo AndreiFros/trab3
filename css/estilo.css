@@ -1,37 +1,146 @@
 /* Reset simples */
 *{box-sizing:border-box}
 body{
-  font-family: Roboto, system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
-  margin:0;
-  color:#222;
-  line-height:1.4;
-  padding:0 1rem;
-  background:#fff;
+    font-family: Roboto, system-ui, -apple-system, "Segoe UI", Garamond;
+    margin:0;
+    color:#222;
+    line-height:1.4;
+    padding:0 1rem;
+    background:#ffffff;
 }
 
 /* Cabeçalho e navegação simples */
 .header-inner{max-width:1200px;margin:0 auto;padding:1rem 0}
-header h1{margin:0;font-size:1.5rem}
-.navbar ul{list-style:none;padding:0;margin:.5rem 0;display:flex;gap:1rem;flex-wrap:wrap}
-.navbar a{color:inherit;text-decoration:none}
+ header h1{margin:0;font-size:2rem}
+.navbar ul{list-style:none;padding:0;margin:.5rem 0;display:flex;gap:10rem;flex-wrap:wrap;border: 1px solid #ddd;padding: .5rem;border-radius: 6px;background: #f9f9f9;justify-content:center}
+.navbar a{color:inherit;text-decoration:none;}
+
+/* cabeçalho: container e layout */
+.header-inner{
+  max-width:1200px;
+  margin:0 auto;
+  padding:1rem;
+  display:flex;
+  align-items:center;
+  align-items: baseline;
+  justify-content:space-between;
+  gap:1rem;
+  font-size: large;
+}
+.logo img{display:block; height:44px; width:auto;}
+
+/* navegação principal */
+.navbar ul{
+  list-style:none;
+  padding:0;
+  margin:0;
+  display:flex;
+  gap:1rem;
+  align-items:center;
+  alignment-baseline: baseline;
+}
+.navbar a{
+  color:inherit;
+  text-decoration:none;
+  padding:.45rem .7rem;
+  border-radius:6px;
+  transition:background .15s, color .15s;
+  font-weight:500;
+}
+.navbar a:hover,
+.navbar a:focus{
+  background:#f0f4ff;
+  color:#0047b3;
+  outline:none;
+}
+
+/* responsivo: menu em coluna no mobile */
+@media (max-width:700px){
+  .header-inner{flex-direction:column; align-items:center; gap:.5rem; padding:.75rem}
+  .navbar ul{flex-direction:column; gap:.35rem; width:100%; align-items:center}
+  .navbar a{width:100%; text-align:center; padding:.6rem 0}
+}
 
 /* Hero/imagem principal (ocupa ~90% da largura) */
 .img-principal{
-  display:block;
-  width:90%;
-  max-width:1200px;
-  margin:0.75rem auto;
-  height:auto;
-  border-radius:6px;
-  object-fit:cover;
+    display:block;
+    width:90%;
+    max-width:1200px;
+    margin:0.75rem auto;
+    height:auto;
+    border-radius:6px;
+    object-fit:cover;
+}
+.sessao{
+    text-align: center;
+    border-radius: 0%;
+    padding: auto;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
 }
 
-/* ====== FORMULÁRIO + IMAGEM (versão simples) ====== */
+.showcase,
+.imgs-showcase {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  gap: 1rem; /* espaço entre itens */
+}
+
+/*imagem + legenda */
+.showcase-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25rem;            /* aproxima a legenda da imagem */
+  text-align: center;
+  border: 1px solid #ddd;  /* borda ao redor da figura */
+  padding: 0.5rem;         /* espaço interno entre borda e conteúdo */
+  border-radius: 6px;      /* cantos arredondados */
+  background: #fff;        /* fundo para destacar a borda */
+}
+
+/* ajuste das imagens do showcase */
+.showcase-item img {
+  max-width: 320px;
+  width: 100%;
+  height: auto;
+  border-radius: 4px;
+  display: block;
+  object-fit: cover;
+  border-bottom: none;
+}
+
+/* legenda mais próxima e visual leve */
+.showcase-item figcaption {
+  font-size: 2.5rem;
+  color: #333;
+  margin: 0;
+  padding-top: 0;          /* sem espaço extra em cima */
+  line-height: 1.15;
+}
+
+/* garante que a imagem interna não exceda o container */
+.showcase picture,
+.showcase img,
+.imgs-showcase picture,
+.imgs-showcase img {
+  max-width: 400px;
+  width: 100%;
+  height: auto;
+  margin: 0;
+  display: block;
+}
+
+/* ====== FORMULÁRIO + IMAGEM  ====== */
 .grid-formulario{
-  display:flex;
-  flex-direction:column; /* mobile: imagem acima, formulário abaixo */
+    display:flex;
+    flex-direction:column; /* mobile: imagem acima, formulário abaixo */
   gap:1rem;
-  max-width:1200px;
+  max-width:1000px;
   margin:1rem auto;
   align-items:stretch;
 }
@@ -84,14 +193,14 @@ header h1{margin:0;font-size:1.5rem}
   .grid-formulario button{width:auto;padding:.6rem 1rem}
 }
 
-/* ====== PAINEL DE FOTOS (simples, sem JS) ====== */
+/* ====== PAINEL DE FOTOS */
 .grid-painel{
   display:grid;
-  gap:.5rem;
-  max-width:1200px;
+  gap:.6rem;             /* pequeno gap para itens mais compactos */
+  max-width:900px;       /* contêiner mais estreito para itens menores */
   margin:1rem auto;
-  /* mobile: cabe várias colunas sem overflow */
-  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  /* mobile: colunas menores para reduzir tamanho das imagens */
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
 }
 
 /* cada foto usa background cover; usamos padding-top para manter proporção em mobile */
@@ -101,25 +210,26 @@ header h1{margin:0;font-size:1.5rem}
   background-position:center;
   border-radius:6px;
   overflow:hidden;
-  padding-top:66%; /* ~3:2 proporção em mobile */
+  padding-top:56%; /* reduz a altura relativa em mobile (imagem menor) */
+  min-height:80px; /* garante visibilidade mínima */
 }
 
 /* Em telas largas, painel ocupa altura e usa colunas fixas */
 @media (min-width:900px){
   .grid-painel{
-    height:70vh; /* ocupa pelo menos 70% da tela */
-    grid-template-columns: repeat(5, 1fr);
+    height:35vh; /* reduz altura do painel em desktop */
+    grid-template-columns: repeat(6, 1fr);
     grid-auto-rows: 1fr;
     gap:.75rem;
   }
-  .grid-painel .foto{
-    padding-top:0;
-    height:100%;
-  }
-  /* combinações simples para variar tamanho visual (opcional) */
-  .grid-painel .f1{grid-column:1 / 3}
-  .grid-painel .f3{grid-column:4 / 6}
-  .grid-painel .f5{grid-column:2 / 4}
+   .grid-painel .foto{
+     padding-top:0;
+     height:100%;
+   }
+   /* combinações simples para variar tamanho */
+   .grid-painel .f1{grid-column:1 / 2}
+   .grid-painel .f3{grid-column:3 / 4}
+   .grid-painel .f5{grid-column:5 / 6}
 }
 
 /* galeria de produtos simples */
@@ -156,3 +266,4 @@ html {
     z-index: 9999;
     border-radius: 4px;
 }
+
