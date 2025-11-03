@@ -95,7 +95,7 @@ body{
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 0.25rem;            /* aproxima a legenda da imagem */
+  gap: 0.1px;            /* aproxima a legenda da imagem */
   text-align: center;
   border: 1px solid #ddd;  /* borda ao redor da figura */
   padding: 0.5rem;         /* espaço interno entre borda e conteúdo */
@@ -106,7 +106,7 @@ body{
 /* ajuste das imagens do showcase */
 .showcase-item img {
   max-width: 320px;
-  width: 100%;
+  width: 90%;
   height: auto;
   border-radius: 4px;
   display: block;
@@ -114,7 +114,7 @@ body{
   border-bottom: none;
 }
 
-/* legenda mais próxima e visual leve */
+/* legenda das imagens */
 .showcase-item figcaption {
   font-size: 2.5rem;
   color: #333;
@@ -129,7 +129,7 @@ body{
 .imgs-showcase picture,
 .imgs-showcase img {
   max-width: 400px;
-  width: 100%;
+  width: 90%;
   height: auto;
   margin: 0;
   display: block;
